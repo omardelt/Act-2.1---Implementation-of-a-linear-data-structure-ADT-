@@ -126,7 +126,7 @@ DoublyLinkedList<T>::~DoublyLinkedList() {
  * Inserts at the front. Returns: none.
  * @param value Element to insert.
  * TODO: Use insertBefore with the node after head.
- * Complexity: O(1) -
+ * Complexity: O(1) - inserts the new node before the first node
  */
 template <typename T>
 void DoublyLinkedList<T>::insertFront(const T &value) {
@@ -137,7 +137,7 @@ void DoublyLinkedList<T>::insertFront(const T &value) {
  * Inserts at the back. Returns: none.
  * @param value Element to insert.
  * TODO: Use insertBefore with tail.
- * Complexity: O(1) -
+ * Complexity: O(1) - inserts the new node before the tail
  */
 template <typename T>
 void DoublyLinkedList<T>::insertBack(const T &value) {
@@ -149,7 +149,7 @@ void DoublyLinkedList<T>::insertBack(const T &value) {
  * @param value Element to search for.
  * @return True if found, false otherwise.
  * TODO: Traverse from head->next to tail, excluding both sentinels.
- * Complexity: O(n) -
+ * Complexity: O(n) - inspects every real node before finding the value.
  */
 template <typename T>
 bool DoublyLinkedList<T>::search(const T &value) const {
