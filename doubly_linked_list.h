@@ -147,7 +147,7 @@ void DoublyLinkedList<T>::insertBack(const T& value) {
  * @param value Element to search for.
  * @return True if found, false otherwise.
  * TODO: Traverse from head->next to tail, excluding both sentinels.
- * Complexity: O(n) - inspects every real node before finding the value.
+ * Complexity: O(n) - inspects every real node until the value is found.
  */
 template <typename T>
 bool DoublyLinkedList<T>::search(const T& value) const {
@@ -166,7 +166,7 @@ bool DoublyLinkedList<T>::search(const T& value) const {
  * Removes the first element. Parameters: none.
  * @return True if removed, false if empty.
  * TODO: Check the count, then use removeNode on head->next.
- * Complexity: O(1) -
+ * Complexity: O(1) - removes the first real node.
  */
 template <typename T>
 bool DoublyLinkedList<T>::removeFront() {
@@ -197,7 +197,7 @@ bool DoublyLinkedList<T>::removeBack() {
  * @param value Element to remove.
  * @return True if removed, false if absent.
  * TODO: Search real nodes and use removeNode on the first match.
- * Complexity: O(n) - may inspect every real node before finding the value.
+ * Complexity: O(n) - inspects every real node until the value is found, and then it is removed.
  */
 template <typename T>
 bool DoublyLinkedList<T>::remove(const T& value) {
@@ -214,7 +214,7 @@ bool DoublyLinkedList<T>::remove(const T& value) {
 
 /**
  * Prints real elements from first to last. Parameters: none. Returns: none.
- * Complexity: O(n), visits each real node once.
+ * Complexity: O(n) - visits each real node once.
  */
 template <typename T>
 void DoublyLinkedList<T>::print() const {
