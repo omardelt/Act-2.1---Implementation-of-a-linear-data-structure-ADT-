@@ -1,6 +1,6 @@
 /*
  * Doubly linked list exercise with front and back sentinels. Requires C++17.
- * Student IDs: A01648827, A01234567, A01234567
+ * Student IDs: A01648827, A01648573, A01647837, A00844255
  * Modified: 2026-09-24
  *
  * Replace the student ID placeholders and complete the six TODO methods.
