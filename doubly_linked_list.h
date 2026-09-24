@@ -168,22 +168,32 @@ bool DoublyLinkedList<T>::search(const T &value) const {
  * Removes the first element. Parameters: none.
  * @return True if removed, false if empty.
  * TODO: Check the count, then use removeNode on head->next.
- * Complexity: O( ) -
+ * Complexity: O(1) - removes the first real node directly.
  */
 template <typename T>
 bool DoublyLinkedList<T>::removeFront() {
-	return false;
+	if (numElements == 0) {
+		return false;
+	}
+	removeNode(head->next);
+	return true;
 }
 
 /**
  * Removes the last element. Parameters: none.
  * @return True if removed, false if empty.
  * TODO: Check the count, then use removeNode on tail->prev.
- * Complexity: O( ) -
+ * Complexity: O(1) - removes the last real node directly.
  */
 template <typename T>
 bool DoublyLinkedList<T>::removeBack() {
-	return false;
+	if (numElements == 0) {
+		return false;
+	}
+	else {
+		removeNode(tail->prev);
+		return true;
+	}
 }
 
 /**
@@ -191,10 +201,18 @@ bool DoublyLinkedList<T>::removeBack() {
  * @param value Element to remove.
  * @return True if removed, false if absent.
  * TODO: Search real nodes and use removeNode on the first match.
- * Complexity: O( ) -
+ * Complexity: O(n) - may inspect every real node before finding the value.
  */
 template <typename T>
 bool DoublyLinkedList<T>::remove(const T &value) {
+	Node *current = head->next;
+	while (current != tail) {
+		if (current->data == value) {
+			removeNode(current);
+			return true;
+		}
+		current = current->next;
+	}
 	return false;
 }
 
